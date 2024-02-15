@@ -1,22 +1,23 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios'
 
-axios
-  .get('https://api.example.com/data')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    if (error.response) {
-      // サーバーがエラー応答を返した場合
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      // リクエストが作成されたが、応答がない場合
-      console.log(error.request);
-    } else {
-      // 何らかの理由でリクエストが作成できなかった場合
-      console.log('Error', error.message);
-    }
-    console.log(error.config);
-  });
+export const get = async (URL: string) =>
+  await axios
+    .get(URL)
+    .then((response) => {
+      // handle success
+      console.log(response.status)
+      return response.data
+    })
+    .catch((error: AxiosError) => {
+      // handle error
+      if (error.response) {
+        console.log(error.response.data)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+      } else if (error.request) {
+        console.log(error.request)
+      } else {
+        console.log('Error', error.message)
+      }
+      console.log(error.config)
+    })
