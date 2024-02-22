@@ -15,7 +15,7 @@ export const get = async (URL: string) =>
         console.log(error.response.status)
         console.log(error.response.headers)
       } else if (error.request) {
-        console.log(error.request)
+        // console.log(error.rhttps://www.ntt.com/bizon/glossary/j-s/sandbox.htmlequest)
       } else {
         console.log('Error', error.message)
       }
