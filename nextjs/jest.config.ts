@@ -9,12 +9,10 @@ const config: Config = {
   clearMocks: true,
   // テストカバレッジ情報を出力する
   collectCoverage: true,
-  // // カバレッジレポートを出力するディレクトリ
-  // coverageDirectory: 'test/coverage',
+  // カバレッジレポートを出力するディレクトリ
+  coverageDirectory: 'test/coverage',
   // Jestがテストの結果を報告するために使用するレポーターを設定
   reporters: ['default'],
-  // Jestがテストファイルを探すためのルートディレクトリを設定
-  rootDir: 'test',
   // TypeScriptのコードを理解できるようにする設定
   preset: 'ts-jest',
   // テストをNode.js環境で実行する
