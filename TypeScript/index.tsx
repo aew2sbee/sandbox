@@ -1,0 +1,1 @@
+const identity = <T = unknown>(arg: T): T => arg;
