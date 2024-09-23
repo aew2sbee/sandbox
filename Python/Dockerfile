@@ -1,4 +1,4 @@
-FROM ubuntu:20.24
+FROM ubuntu:20.04
 USER root
 
 RUN apt update && apt install -y python3.10 python3-pip
